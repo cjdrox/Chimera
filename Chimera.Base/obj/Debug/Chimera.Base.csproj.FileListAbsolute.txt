@@ -1,8 +1,0 @@
-I:\Work\Chimera\Chimera.Base\bin\Debug\Chimera.Base.dll
-I:\Work\Chimera\Chimera.Base\bin\Debug\Chimera.Base.pdb
-I:\Work\Chimera\Chimera.Base\obj\Debug\Chimera.Base.dll
-I:\Work\Chimera\Chimera.Base\obj\Debug\Chimera.Base.pdb
-J:\Work\Dev\Chimera\Chimera.Base\bin\Debug\Chimera.Base.dll
-J:\Work\Dev\Chimera\Chimera.Base\bin\Debug\Chimera.Base.pdb
-J:\Work\Dev\Chimera\Chimera.Base\obj\Debug\Chimera.Base.dll
-J:\Work\Dev\Chimera\Chimera.Base\obj\Debug\Chimera.Base.pdb
