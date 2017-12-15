@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Web", "Chimera.Web\Chimera.Web.csproj", "{609FA413-2207-4772-8C04-7A8662D05D44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Deploy", "Chimera.Deploy\Chimera.Deploy.csproj", "{D2AD3665-6C37-4FAE-84A6-E6C44FCD880E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Entity", "0 Entity", "{E537329C-787A-489C-AE09-775977400A58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Deployer", "2 Deployer", "{35D2D00D-31B1-413E-B928-B9868A2F48AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Data Access", "1 Data Access", "{2EDD411B-68D9-4F5B-838C-49D6843B4247}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Presentation", "4 Presentation", "{6F234012-8772-4FCE-BE47-7754C18CD45C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.DataAcess", "Chimera.DataAcess\Chimera.DataAcess.csproj", "{41802650-3936-46AF-9B80-8ACEA7FFE35A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFD14FD5-DFCD-45C3-B3E6-3454F4F54C9F}"
+	ProjectSection(SolutionItems) = preProject
+		Common\Microsoft.SqlServer.ConnectionInfo.dll = Common\Microsoft.SqlServer.ConnectionInfo.dll
+		Common\Microsoft.SqlServer.Smo.dll = Common\Microsoft.SqlServer.Smo.dll
+		Common\Microsoft.SqlServer.SmoExtended.dll = Common\Microsoft.SqlServer.SmoExtended.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Base", "Chimera.Base\Chimera.Base.csproj", "{E3A433AD-4ACD-472F-BCD6-C25956D5014A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Entities", "Chimera.Entities\Chimera.Entities.csproj", "{92C538FB-A3A1-41B7-A2EB-A06368BC6302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Security", "Chimera.Security\Chimera.Security.csproj", "{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Security.Test", "Chimera.Security.Test\Chimera.Security.Test.csproj", "{41F9DECC-E918-43BD-BE99-0EDD19616B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Deploy.Test", "Chimera.Deploy.Test\Chimera.Deploy.Test.csproj", "{EDEE53D9-44D7-42CA-AECD-5036061F652E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{609FA413-2207-4772-8C04-7A8662D05D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609FA413-2207-4772-8C04-7A8662D05D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609FA413-2207-4772-8C04-7A8662D05D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609FA413-2207-4772-8C04-7A8662D05D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AD3665-6C37-4FAE-84A6-E6C44FCD880E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AD3665-6C37-4FAE-84A6-E6C44FCD880E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AD3665-6C37-4FAE-84A6-E6C44FCD880E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AD3665-6C37-4FAE-84A6-E6C44FCD880E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41802650-3936-46AF-9B80-8ACEA7FFE35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41802650-3936-46AF-9B80-8ACEA7FFE35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41802650-3936-46AF-9B80-8ACEA7FFE35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41802650-3936-46AF-9B80-8ACEA7FFE35A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A433AD-4ACD-472F-BCD6-C25956D5014A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A433AD-4ACD-472F-BCD6-C25956D5014A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A433AD-4ACD-472F-BCD6-C25956D5014A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A433AD-4ACD-472F-BCD6-C25956D5014A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C538FB-A3A1-41B7-A2EB-A06368BC6302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C538FB-A3A1-41B7-A2EB-A06368BC6302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C538FB-A3A1-41B7-A2EB-A06368BC6302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C538FB-A3A1-41B7-A2EB-A06368BC6302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F9DECC-E918-43BD-BE99-0EDD19616B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F9DECC-E918-43BD-BE99-0EDD19616B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F9DECC-E918-43BD-BE99-0EDD19616B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F9DECC-E918-43BD-BE99-0EDD19616B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{609FA413-2207-4772-8C04-7A8662D05D44} = {6F234012-8772-4FCE-BE47-7754C18CD45C}
+		{D2AD3665-6C37-4FAE-84A6-E6C44FCD880E} = {35D2D00D-31B1-413E-B928-B9868A2F48AB}
+		{EDEE53D9-44D7-42CA-AECD-5036061F652E} = {35D2D00D-31B1-413E-B928-B9868A2F48AB}
+		{E3A433AD-4ACD-472F-BCD6-C25956D5014A} = {E537329C-787A-489C-AE09-775977400A58}
+		{92C538FB-A3A1-41B7-A2EB-A06368BC6302} = {E537329C-787A-489C-AE09-775977400A58}
+		{41802650-3936-46AF-9B80-8ACEA7FFE35A} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
+		{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
+		{41F9DECC-E918-43BD-BE99-0EDD19616B5A} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
+	EndGlobalSection
+EndGlobal

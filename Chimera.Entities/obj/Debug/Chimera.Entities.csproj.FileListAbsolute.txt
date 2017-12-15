@@ -1,0 +1,14 @@
+I:\Work\Chimera\Chimera.Entities\bin\Debug\Chimera.Entities.dll
+I:\Work\Chimera\Chimera.Entities\bin\Debug\Chimera.Entities.pdb
+I:\Work\Chimera\Chimera.Entities\obj\Debug\Chimera.Entities.csprojResolveAssemblyReference.cache
+I:\Work\Chimera\Chimera.Entities\obj\Debug\Chimera.Entities.dll
+I:\Work\Chimera\Chimera.Entities\obj\Debug\Chimera.Entities.pdb
+I:\Work\Chimera\Chimera.Entities\bin\Debug\Chimera.Base.dll
+I:\Work\Chimera\Chimera.Entities\bin\Debug\Chimera.Base.pdb
+J:\Work\Dev\Chimera\Chimera.Entities\bin\Debug\Chimera.Entities.dll
+J:\Work\Dev\Chimera\Chimera.Entities\bin\Debug\Chimera.Entities.pdb
+J:\Work\Dev\Chimera\Chimera.Entities\bin\Debug\Chimera.Base.dll
+J:\Work\Dev\Chimera\Chimera.Entities\bin\Debug\Chimera.Base.pdb
+J:\Work\Dev\Chimera\Chimera.Entities\obj\Debug\Chimera.Entities.csprojResolveAssemblyReference.cache
+J:\Work\Dev\Chimera\Chimera.Entities\obj\Debug\Chimera.Entities.dll
+J:\Work\Dev\Chimera\Chimera.Entities\obj\Debug\Chimera.Entities.pdb

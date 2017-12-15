@@ -1,0 +1,148 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ assembly name="System.Configuration" #>
+<#@ import namespace="System.Configuration" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Reflection" #> 
+<#@ output extension=".cs" #>
+<#@ include file="TemplateFileManagerV2.1.ttinclude" #>
+
+<#
+	var manager = TemplateFileManager.Create(this);
+	List<Type> _types = new List<Type>();
+
+	var configFileMap = new ExeConfigurationFileMap(this.Host.ResolvePath(@"App.config"));
+	configFileMap.ExeConfigFilename = this.Host.ResolvePath(@"App.config");
+	System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
+	var settings = config.GetSection("moduleSettings") as AppSettingsSection;
+	var a = settings.Settings["EntitiesNameSpace"].Value;
+	Assembly asm = Assembly.LoadFrom(this.Host.ResolvePath(@"../"+a+"/bin/Debug/"+a+".dll"));
+
+	_types = asm.GetTypes().ToList();
+	
+	// start of output files loop
+    foreach (Type _t in _types)
+    {
+		var _dotpos = _t.ToString().LastIndexOf(".") + 1;
+		var _st = _t.ToString().Substring(_dotpos, (_t.ToString().Length - _dotpos));
+		manager.StartNewFile(_t + ".cs");
+
+		var props = _t.GetProperties().Select( p => p.Name);
+		var ptypes = _t.GetProperties().Select( p => p.PropertyType).ToArray();
+
+		//var paramnames = _t.GetProperties().Select( p => String.Format("@{1}", p.Name));
+		var paramnames = props.Select( p => "@" + p).ToArray();
+		var paramlist = string.Join(", ", paramnames);
+		var propnames = String.Join(", ", props);
+	
+#>
+
+/* Chimera.Entities.<#= _st #>.cs*/ 
+using System;
+using <#= a #>;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Chimera.DataAcess
+{
+	public class <#= _st #>Adapter
+	{
+		private readonly string _connectionString;
+
+	    public BioProfileAdapter(string connectionString)
+	    {
+	        _connectionString = connectionString;
+	    }
+
+		public <#= _st #> Read(long id)
+		{
+			const string sql = "SELECT <#=propnames #> FROM <#= _st #> WHERE Id=@Id";
+
+			<#= _st #> entity = null;
+
+			using(var connection = new SqlConnection(_connectionString))
+			{
+				connection.Open();
+
+				using(var command = new SqlCommand(sql, connection))
+				{
+					command.Parameters.AddWithValue("@Id", id);
+					var reader = command.ExecuteReader(CommandBehavior.SingleResult);
+
+					while (reader.Read())
+					{
+						entity = new <#= _st #>()
+						{
+<# 
+		int pidx = 0;
+
+        foreach (var p in paramnames)
+        {
+			string n = "";
+			if (ptypes[pidx].IsGenericType && ptypes[pidx].GetGenericTypeDefinition() == typeof(Nullable<>))
+			{
+				ptypes[pidx] = ptypes[pidx].GetGenericArguments()[0];
+				n = "?";
+			}
+#>
+							<#= p.Substring(1) #> = (<#= String.Format("{0}{1}", ptypes[pidx], n) #>) reader["<#= p.Substring(1) #>"],
+<#
+			pidx++;
+        }
+#>						};
+					}
+				}
+				
+			}
+
+            return entity;
+		}
+
+		public bool Insert(<#= _st #> entity)
+		{
+			const string sql = "INSERT INTO <#= _st #> ( <#=propnames #> ) VALUES ( <#=paramlist #> )";
+
+			long rows;
+
+			using(var connection = new SqlConnection(_connectionString))
+			{
+				using(var command = new SqlCommand(sql, connection))
+				{
+<# 
+        foreach (var p in paramnames)
+        {
+#>
+					command.Parameters.AddWithValue("<#= p #>", entity.<#= p.Substring(1) #>);
+<#
+        }
+#>
+
+					rows = command.ExecuteNonQuery();
+				}
+			}
+
+			return (rows > 0);
+		}
+
+		public bool Update(<#= _st #> entity)
+		{
+			return false;
+		}
+
+		public <#= _st #> Delete(Guid id)
+		{
+			return null;
+		}
+	}
+}
+
+	<#
+	// end of output files loop
+	}
+	#>
+
+<#
+manager.Process();
+#>

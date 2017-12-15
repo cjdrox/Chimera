@@ -1,0 +1,9 @@
+I:\Work\Chimera\Chimera.Security.Test\bin\Debug\Chimera.Security.Test.dll
+I:\Work\Chimera\Chimera.Security.Test\bin\Debug\Chimera.Security.Test.pdb
+I:\Work\Chimera\Chimera.Security.Test\bin\Debug\nunit.framework.dll
+I:\Work\Chimera\Chimera.Security.Test\bin\Debug\nunit.framework.xml
+I:\Work\Chimera\Chimera.Security.Test\obj\Debug\Chimera.Security.Test.csprojResolveAssemblyReference.cache
+I:\Work\Chimera\Chimera.Security.Test\obj\Debug\Chimera.Security.Test.dll
+I:\Work\Chimera\Chimera.Security.Test\obj\Debug\Chimera.Security.Test.pdb
+I:\Work\Chimera\Chimera.Security.Test\bin\Debug\Chimera.Security.dll
+I:\Work\Chimera\Chimera.Security.Test\bin\Debug\Chimera.Security.pdb
