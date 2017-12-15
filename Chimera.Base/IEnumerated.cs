@@ -2,6 +2,6 @@
 {
     public interface IEnumerated
     {
-        int Id { get; set; }
+        long Id { get; set; }
     }
 }

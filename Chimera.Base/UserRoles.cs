@@ -2,8 +2,8 @@
 {
     public class UserRoles : IEnumerated
     {
-        public int Id { get; set; }
         public SystemUser SystemUser { get; set; }
         public Role Role { get; set; }
+        public long Id { get; set; }
     }
 }

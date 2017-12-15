@@ -11,7 +11,7 @@ namespace Chimera.DataAcess
 	{
 		private readonly string _connectionString;
 
-	    public BioProfileAdapter(string connectionString)
+	    public CountryTerritoryAdapter(string connectionString)
 	    {
 	        _connectionString = connectionString;
 	    }

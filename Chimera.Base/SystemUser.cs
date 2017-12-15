@@ -1,8 +1,8 @@
 namespace Chimera.Base
 {
-    public class SystemUser : BaseEntity, IEnumerated
+    public class SystemUser : BaseEntity
     {
-        public int Id { get; set; }
+        public override long Id { get; set; }
 
         [Serialize(Length = 50)]
         public string Username { get; set; }

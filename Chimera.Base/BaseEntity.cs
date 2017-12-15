@@ -2,9 +2,9 @@
 
 namespace Chimera.Base
 {
-    public abstract class BaseEntity : ISaveable
+    public abstract class BaseEntity : ISaveable, IEnumerated
     {
-        public long Id { get; set; }
+        public virtual long Id { get; set; }
         public Guid ObjectId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
