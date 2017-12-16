@@ -18,7 +18,7 @@ namespace Chimera.DataAcess
 
 		public Subject Read(long id)
 		{
-			const string sql = "SELECT Id, CodeName, BirthPlace, Nationality, BioProfile, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt FROM Subject WHERE Id=@Id";
+			const string sql = "SELECT CodeName, BirthPlace, Nationality, BioProfile, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt FROM Subject WHERE Id=@Id";
 
 			Subject entity = null;
 
@@ -35,7 +35,6 @@ namespace Chimera.DataAcess
 					{
 						entity = new Subject()
 						{
-							Id = (System.Int32) reader["Id"],
 							CodeName = (System.String) reader["CodeName"],
 							BirthPlace = (Chimera.Entities.BirthPlace) reader["BirthPlace"],
 							Nationality = (Chimera.Entities.Nationality) reader["Nationality"],
@@ -56,7 +55,7 @@ namespace Chimera.DataAcess
 
 		public bool Insert(Subject entity)
 		{
-			const string sql = "INSERT INTO Subject ( Id, CodeName, BirthPlace, Nationality, BioProfile, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt ) VALUES ( @Id, @CodeName, @BirthPlace, @Nationality, @BioProfile, @Id, @ObjectId, @CreatedAt, @ModifiedAt, @DeletedAt )";
+			const string sql = "INSERT INTO Subject ( CodeName, BirthPlace, Nationality, BioProfile, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt ) VALUES ( @CodeName, @BirthPlace, @Nationality, @BioProfile, @Id, @ObjectId, @CreatedAt, @ModifiedAt, @DeletedAt )";
 
 			long rows;
 
@@ -64,7 +63,6 @@ namespace Chimera.DataAcess
 			{
 				using(var command = new SqlCommand(sql, connection))
 				{
-					command.Parameters.AddWithValue("@Id", entity.Id);
 					command.Parameters.AddWithValue("@CodeName", entity.CodeName);
 					command.Parameters.AddWithValue("@BirthPlace", entity.BirthPlace);
 					command.Parameters.AddWithValue("@Nationality", entity.Nationality);

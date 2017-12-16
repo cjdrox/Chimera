@@ -18,7 +18,7 @@ namespace Chimera.DataAcess
 
 		public Region Read(long id)
 		{
-			const string sql = "SELECT Id, Name, Territory, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt FROM Region WHERE Id=@Id";
+			const string sql = "SELECT Name, Territory, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt FROM Region WHERE Id=@Id";
 
 			Region entity = null;
 
@@ -35,7 +35,6 @@ namespace Chimera.DataAcess
 					{
 						entity = new Region()
 						{
-							Id = (System.Int32) reader["Id"],
 							Name = (System.String) reader["Name"],
 							Territory = (Chimera.Entities.CountryTerritory) reader["Territory"],
 							Id = (System.Int64) reader["Id"],
@@ -54,7 +53,7 @@ namespace Chimera.DataAcess
 
 		public bool Insert(Region entity)
 		{
-			const string sql = "INSERT INTO Region ( Id, Name, Territory, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt ) VALUES ( @Id, @Name, @Territory, @Id, @ObjectId, @CreatedAt, @ModifiedAt, @DeletedAt )";
+			const string sql = "INSERT INTO Region ( Name, Territory, Id, ObjectId, CreatedAt, ModifiedAt, DeletedAt ) VALUES ( @Name, @Territory, @Id, @ObjectId, @CreatedAt, @ModifiedAt, @DeletedAt )";
 
 			long rows;
 
@@ -62,7 +61,6 @@ namespace Chimera.DataAcess
 			{
 				using(var command = new SqlCommand(sql, connection))
 				{
-					command.Parameters.AddWithValue("@Id", entity.Id);
 					command.Parameters.AddWithValue("@Name", entity.Name);
 					command.Parameters.AddWithValue("@Territory", entity.Territory);
 					command.Parameters.AddWithValue("@Id", entity.Id);
