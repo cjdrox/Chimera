@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Security.Test", "Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.Deploy.Test", "Chimera.Deploy.Test\Chimera.Deploy.Test.csproj", "{EDEE53D9-44D7-42CA-AECD-5036061F652E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chimera.DataAccess.Test", "Chimera.DataAccess.Test\Chimera.DataAccess.Test.csproj", "{538F7B74-936A-4131-A117-C561478CC44B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDEE53D9-44D7-42CA-AECD-5036061F652E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538F7B74-936A-4131-A117-C561478CC44B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538F7B74-936A-4131-A117-C561478CC44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538F7B74-936A-4131-A117-C561478CC44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538F7B74-936A-4131-A117-C561478CC44B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +89,6 @@ Global
 		{41802650-3936-46AF-9B80-8ACEA7FFE35A} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
 		{1E5C9D4B-6737-4D3D-BC4E-28DE4A0B358F} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
 		{41F9DECC-E918-43BD-BE99-0EDD19616B5A} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
+		{538F7B74-936A-4131-A117-C561478CC44B} = {2EDD411B-68D9-4F5B-838C-49D6843B4247}
 	EndGlobalSection
 EndGlobal

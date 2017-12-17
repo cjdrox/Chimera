@@ -18,24 +18,27 @@
 	System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
 	var settings = config.GetSection("moduleSettings") as AppSettingsSection;
 	var a = settings.Settings["EntitiesNameSpace"].Value;
-	Assembly asm = Assembly.LoadFrom(this.Host.ResolvePath(@"../"+a+"/bin/Debug/"+a+".dll"));
 
-	_types = asm.GetTypes().ToList();
+	Assembly asm = Assembly.Load(File.ReadAllBytes(this.Host.ResolvePath(@"../"+a+"/bin/Debug/"+a+".dll")));
+	//Assembly asm = Assembly.LoadFrom(this.Host.ResolvePath(@"../"+a+"/bin/Debug/"+a+".dll"));
+    
+
+		_types = asm.GetTypes().ToList();
 	
-	// start of output files loop
-    foreach (Type _t in _types)
-    {
-		var _dotpos = _t.ToString().LastIndexOf(".") + 1;
-		var _st = _t.ToString().Substring(_dotpos, (_t.ToString().Length - _dotpos));
-		manager.StartNewFile(_t + ".cs");
+		// start of output files loop
+		foreach (Type _t in _types)
+		{
+			var _dotpos = _t.ToString().LastIndexOf(".") + 1;
+			var _st = _t.ToString().Substring(_dotpos, (_t.ToString().Length - _dotpos));
+			manager.StartNewFile(_t + ".cs");
 
-		var props = _t.GetProperties().Select( p => p.Name);
-		var ptypes = _t.GetProperties().Select( p => p.PropertyType).ToArray();
+			var props = _t.GetProperties().Select( p => p.Name);
+			var ptypes = _t.GetProperties().Select( p => p.PropertyType).ToArray();
 
-		//var paramnames = _t.GetProperties().Select( p => String.Format("@{1}", p.Name));
-		var paramnames = props.Select( p => "@" + p).ToArray();
-		var paramlist = string.Join(", ", paramnames);
-		var propnames = String.Join(", ", props);
+			//var paramnames = _t.GetProperties().Select( p => String.Format("@{1}", p.Name));
+			var paramnames = props.Select( p => "@" + p).ToArray();
+			var paramlist = string.Join(", ", paramnames);
+			var propnames = String.Join(", ", props);
 	
 #>
 
@@ -76,21 +79,21 @@ namespace Chimera.DataAcess
 						entity = new <#= _st #>()
 						{
 <# 
-		int pidx = 0;
+			int pidx = 0;
 
-        foreach (var p in paramnames)
-        {
-			string n = "";
-			if (ptypes[pidx].IsGenericType && ptypes[pidx].GetGenericTypeDefinition() == typeof(Nullable<>))
+			foreach (var p in paramnames)
 			{
-				ptypes[pidx] = ptypes[pidx].GetGenericArguments()[0];
-				n = "?";
-			}
+				string n = "";
+				if (ptypes[pidx].IsGenericType && ptypes[pidx].GetGenericTypeDefinition() == typeof(Nullable<>))
+				{
+					ptypes[pidx] = ptypes[pidx].GetGenericArguments()[0];
+					n = "?";
+				}
 #>
 							<#= p.Substring(1) #> = (<#= String.Format("{0}{1}", ptypes[pidx], n) #>) reader["<#= p.Substring(1) #>"],
 <#
-			pidx++;
-        }
+				pidx++;
+			}
 #>						};
 					}
 				}
@@ -139,10 +142,11 @@ namespace Chimera.DataAcess
 }
 
 	<#
-	// end of output files loop
-	}
+		// end of output files loop
+		}
 	#>
 
 <#
+    
 manager.Process();
 #>
